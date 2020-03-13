@@ -6,6 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="page">
+    <header class="header page__header">
+      <div class="header__wrapper">
+        <nav class="header__nav">
+          <a class="logo" href="index.html">
+            <img src="img/logo.svg" alt="Логотип отеля для кошек “Котейка”" width="63" height="52">
+          </a>
+          <ul class="menu menu--header header__menu">
+            <li class="menu__item">
+              <a class="menu__link" href="index.html#features">Почему мы?</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#rooms">Номера</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="index.html#testimonials">Отзывы</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#contacts">Как нас найти</a>
+            </li>
+          </ul>
+          <a class="header__menu-toggle" href="#menu">
+            <span class="visually-hidden">Открыть меню</span>
+          </a>
+        </nav>
+        <div class="menu-mobile" id="menu">
+          <div class="menu-mobile__top">
+            <a class="logo" href="index.html">
+              <img src="img/logo.svg" alt="Логотип отеля для кошек “Котейка”" width="63" height="52">
+            </a>
+            <button class="button-close menu-mobile__close" type="button">
+              <span class="visually-hidden">Закрыть меню</span>
+            </button>
+          </div>
+          <nav class="menu-mobile__inner">
+            <ul class="menu menu--mobile menu-mobile__menu">
+              <li class="menu__item">
+                <a class="menu__link" href="index.html#features">Почему мы?</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#rooms">Номера</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="index.html#testimonials">Отзывы</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+            <a class="menu-mobile__phone" href="tel:+78003335599">8 (800) 333-55-99</a>
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__link social__link--fb" href="https://www.facebook.com" target="_blank">
+                  <span class="visually-hidden">Мы на Facebook</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--ig" href="https://www.instagram.com" target="_blank">
+                  <span class="visually-hidden">Мы в Instagram</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--vk" href="https://vk.com" target="_blank">
+                  <span class="visually-hidden">Мы во ВКонтакте</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
