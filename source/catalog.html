@@ -18,7 +18,7 @@
               <a class="menu__link" href="index.html#features">Почему мы?</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#rooms">Номера</a>
+              <a class="menu__link" href="#catalog">Номера</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="index.html#testimonials">Отзывы</a>
@@ -46,7 +46,7 @@
                 <a class="menu__link" href="index.html#features">Почему мы?</a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#rooms">Номера</a>
+                <a class="menu__link" href="#catalog">Номера</a>
               </li>
               <li class="menu__item">
                 <a class="menu__link" href="index.html#testimonials">Отзывы</a>
@@ -77,5 +77,337 @@
         </div>
       </div>
     </header>
+    <main>
+      <section class="catalog page__catalog" id="catalog">
+        <div class="catalog__wrapper">
+          <header class="catalog__heading">
+            <h1 class="catalog__title">Наши номера</h1>
+            <div class="catalog__buttons">
+              <a class="catalog__filter" href="filter-form.html">Фильтры</a>
+              <div class="sorting catalog__sorting">
+                <button class="sorting__option sorting__option--up sorting__option--toggle" type="button">По площади</button>
+                <div class="sorting__options">
+                  <a class="sorting__option sorting__option--down" href="#!">По площади</a>
+                  <a class="sorting__option sorting__option--up" href="#!">По цене</a>
+                  <a class="sorting__option sorting__option--down" href="#!">По цене</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div class="catalog__cols">
+            <aside class="filter">
+              <form class="filter__form" action="#" method="get">
+                <fieldset class="filter__fields">
+                  <legend class="filter__fields-title">Цена за сутки, <span>₽</span></legend>
+                  <div class="filter__price">
+                    <div class="filter__price-field">
+                      <input class="filter__price-input" id="minprice" type="number" name="minprice" placeholder="100" min="100" max="600" step="1" aria-label="Цена за сутки от">
+                      <label class="filter__price-label" for="minprice">от</label>
+                    </div>
+                    <div class="filter__price-field">
+                      <input class="filter__price-input" id="maxprice" type="number" name="maxprice" placeholder="600" min="100" max="600" step="1" aria-label="Цена за сутки до">
+                      <label class="filter__price-label" for="maxprice">до</label>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="filter__fields">
+                  <legend class="filter__fields-title">Площадь</legend>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="063" type="checkbox" name="area" value="063" aria-label="Площадь 0,63 м2">
+                    <label class="filter__field-label" for="063">0,63 м2</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="090" type="checkbox" name="area" value="090" aria-label="Площадь 0,90 м2">
+                    <label class="filter__field-label" for="090">0,90 м2</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="113" type="checkbox" name="area" value="113" aria-label="Площадь 1,13 м2">
+                    <label class="filter__field-label" for="113">1,13 м2</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="156" type="checkbox" name="area" value="156" aria-label="Площадь 1,56 м2">
+                    <label class="filter__field-label" for="156">1,56 м2</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="256" type="checkbox" name="area" value="256" aria-label="Площадь 2,56 м2">
+                    <label class="filter__field-label" for="256">2,56 м2</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="288" type="checkbox" name="area" value="288" aria-label="Площадь 2,88 м2">
+                    <label class="filter__field-label" for="288">2,88 м2</label>
+                  </div>
+                </fieldset>
+                <fieldset class="filter__fields">
+                  <legend class="filter__fields-title">Оснащение номера</legend>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="empty" type="checkbox" name="equipment" value="empty">
+                    <label class="filter__field-label" for="empty">Пустой номер</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="bed" type="checkbox" name="equipment" value="bed">
+                    <label class="filter__field-label" for="bed">Лежак</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="scratcher" type="checkbox" name="equipment" value="scratcher">
+                    <label class="filter__field-label" for="scratcher">Когтеточка</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="tree" type="checkbox" name="equipment" value="tree">
+                    <label class="filter__field-label" for="tree">Игровой-комплекс</label>
+                  </div>
+                  <div class="filter__field">
+                    <input class="visually-hidden" id="house" type="checkbox" name="equipment" value="house">
+                    <label class="filter__field-label" for="house">Домик</label>
+                  </div>
+                </fieldset>
+                <button class="filter__button" type="submit">Применить</button>
+                <button class="filter__button filter__button--alt" type="reset">Сбросить фильтр</button>
+              </form>
+              <button class="button-close filter__close" type="button">
+                <span class="visually-hidden">Закрыть фильтр</span>
+              </button>
+            </aside>
+            <div class="catalog__list">
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_01-desktop@1x.webp 1x, img/room-preview_01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_01-tablet@1x.webp 1x, img/room-preview_01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_01-mobile@1x.webp 1x, img/room-preview_01-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_01-desktop@1x.jpg 1x, img/room-preview_01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_01-tablet@1x.jpg 1x, img/room-preview_01-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_01-mobile@1x.jpg 1x, img/room-preview_01-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_01-desktop@1x.jpg" alt="Номер “Эконом”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Эконом</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 90х70х180 см</p>
+                    <p>Площадь - 0,63 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-empty.svg" alt="Пустой номер" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Пустой номер</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">100₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_02-desktop@1x.webp 1x, img/room-preview_02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_02-tablet@1x.webp 1x, img/room-preview_02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_02-mobile@1x.webp 1x, img/room-preview_02-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_02-desktop@1x.jpg 1x, img/room-preview_02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_02-tablet@1x.jpg 1x, img/room-preview_02-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_02-mobile@1x.jpg 1x, img/room-preview_02-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_02-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Эконом плюс</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 90х100х180 см</p>
+                    <p>Площадь - 0,90 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-bed.svg" alt="Лежак" width="18" height="14">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Лежак</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-scratcher.svg" alt="Когтеточка" width="16" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Когтеточка</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">200₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_03-desktop@1x.webp 1x, img/room-preview_03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_03-tablet@1x.webp 1x, img/room-preview_03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_03-mobile@1x.webp 1x, img/room-preview_03-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_03-desktop@1x.jpg 1x, img/room-preview_03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_03-tablet@1x.jpg 1x, img/room-preview_03-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_03-mobile@1x.jpg 1x, img/room-preview_03-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_03-desktop@1x.jpg" alt="Номер “Комфорт”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Комфорт</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 100х125х180 см</p>
+                    <p>Площадь - 1,13 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-bed.svg" alt="Лежак" width="18" height="14">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Лежак</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-scratcher.svg" alt="Когтеточка" width="16" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Когтеточка</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-tree.svg" alt="Игровой комплекс" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Игровой комплекс</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">250₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_04-desktop@1x.webp 1x, img/room-preview_04-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_04-tablet@1x.webp 1x, img/room-preview_04-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_04-mobile@1x.webp 1x, img/room-preview_04-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_04-desktop@1x.jpg 1x, img/room-preview_04-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_04-tablet@1x.jpg 1x, img/room-preview_04-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_04-mobile@1x.jpg 1x, img/room-preview_04-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_04-desktop@1x.jpg" alt="Номер “Сьют”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Сьют</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 125х125х180 см</p>
+                    <p>Площадь - 1,56 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-bed.svg" alt="Лежак" width="18" height="14">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Лежак</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-scratcher.svg" alt="Когтеточка" width="16" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Когтеточка</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-tree.svg" alt="Игровой комплекс" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Игровой комплекс</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">350₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_05-desktop@1x.webp 1x, img/room-preview_05-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_05-tablet@1x.webp 1x, img/room-preview_05-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_05-mobile@1x.webp 1x, img/room-preview_05-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_05-desktop@1x.jpg 1x, img/room-preview_05-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_05-tablet@1x.jpg 1x, img/room-preview_05-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_05-mobile@1x.jpg 1x, img/room-preview_05-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_05-desktop@1x.jpg" alt="Номер “Люкс”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Люкс</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 160х160х180 см</p>
+                    <p>Площадь - 2,56 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-bed.svg" alt="Лежак" width="18" height="14">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Лежак</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-scratcher.svg" alt="Когтеточка" width="16" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Когтеточка</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-tree.svg" alt="Игровой комплекс" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Игровой комплекс</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-house.svg" alt="Домик" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Домик</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">500₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+              <article class="room-preview catalog__room">
+                <picture class="room-preview__image">
+                  <source srcset="img/room-preview_06-desktop@1x.webp 1x, img/room-preview_06-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/room-preview_06-tablet@1x.webp 1x, img/room-preview_06-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/room-preview_06-mobile@1x.webp 1x, img/room-preview_06-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/room-preview_06-desktop@1x.jpg 1x, img/room-preview_06-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/room-preview_06-tablet@1x.jpg 1x, img/room-preview_06-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/room-preview_06-mobile@1x.jpg 1x, img/room-preview_06-mobile@2x.jpg 2x">
+                  <img src="img/room-preview_06-desktop@1x.jpg" alt="Номер “Супер-Люкс”" width="270" height="185">
+                </picture>
+                <div class="room-preview__content">
+                  <h2 class="room-preview__title">Супер-Люкс</h2>
+                  <div class="room-preview__info">
+                    <p>Размеры (ШхГхВ) - 180х160х180 см</p>
+                    <p>Площадь - 2,88 м2</p>
+                    <p>
+                      Оснащение номера
+                      <dl class="room-preview__equipment-list">
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-bed.svg" alt="Лежак" width="18" height="14">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Лежак</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-scratcher.svg" alt="Когтеточка" width="16" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Когтеточка</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-tree.svg" alt="Игровой комплекс" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Игровой комплекс</dd>
+                        <dt class="room-preview__equipment-icon">
+                          <img src="img/room_icon-house.svg" alt="Домик" width="18" height="18">
+                        </dt>
+                        <dd class="room-preview__equipment-tooltip">Домик</dd>
+                      </dl>
+                    </p>
+                    <p>
+                      Цена за сутки:
+                      <b class="room-preview__price">600₽</b>
+                    </p>
+                  </div>
+                  <a class="button button--catalog" href="room.html">Забронировать</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
