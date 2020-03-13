@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="page page--form">
+    <section class="modal modal--reservation">
+      <h1 class="modal__title">Забронировать номер</h1>
+      <form class="reservation-form" action="#" method="post">
+        <div class="reservation-form__field">
+          <label class="visually-hidden" for="username">Ваше имя</label>
+          <input class="reservation-form__field-input" id="username" type="text" name="username" placeholder="Ваше имя" required>
+        </div>
+        <div class="reservation-form__field">
+          <label class="visually-hidden" for="petname">Имя Питомца</label>
+          <input class="reservation-form__field-input" id="petname" type="text" name="petname" placeholder="Имя Питомца" required>
+        </div>
+        <div class="reservation-form__field">
+          <label class="visually-hidden" for="phone">Телефон</label>
+          <input class="reservation-form__field-input" id="phone" type="tel" name="phone" placeholder="Телефон" required>
+        </div>
+        <div class="reservation-form__field">
+          <label class="visually-hidden" for="email">E-mail</label>
+          <input class="reservation-form__field-input" id="email" type="email" name="email" placeholder="E-mail">
+        </div>
+        <div class="reservation-form__cols">
+          <p>Дата заезда</p>
+          <div class="reservation-form__field reservation-form__field--narrow">
+            <label for="firstday">с</label>
+            <input class="reservation-form__field-input" id="firstday" type="date" name="firstday" placeholder="Дата заезда" alia-label="Дата заезда" required>
+          </div>
+          <div class="reservation-form__field reservation-form__field--narrow">
+            <label for="lastday">по</label>
+            <input class="reservation-form__field-input" id="lastday" type="date" name="lastday" placeholder="Дата выезда" alia-label="Дата выезда" required>
+          </div>
+        </div>
+        <button class="button button--wide" type="submit">Отправить заявку</button>
+      </form>
+    </section>
   </body>
 </html>
