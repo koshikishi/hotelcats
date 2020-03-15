@@ -18,6 +18,13 @@
   }
 }
 
+%container-wide {
+  min-width: 320px;
+  max-width: 1366px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 %list-reset {
   margin-top: 0;
   margin-bottom: 0;
