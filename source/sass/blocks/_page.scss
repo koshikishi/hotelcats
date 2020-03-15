@@ -9,3 +9,8 @@
     font-size: $fontSizeTextLarge;
   }
 }
+
+.page__header {
+  position: sticky;
+  top: 0;
+}
