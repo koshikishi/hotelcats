@@ -31,3 +31,20 @@
   padding-left: 0;
   list-style: none;
 }
+
+%title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: $fontWeightBold #{$fontSizeTitleMobile}/#{$lineHeightTitleMobile} $fontFamilyTitle;
+
+  @media (min-width: 768px) {
+    font-size: $fontSizeTitleTablet;
+    line-height: $lineHeightTitleTablet;
+  }
+}
+
+%subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: $fontWeightMedium #{$fontSizeSubtitle}/#{$lineHeightNormal} $fontFamilyTitle;
+}
