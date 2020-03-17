@@ -1,0 +1,329 @@
+.slider__wrapper {
+  @extend %container-narrow;
+  position: relative;
+  padding: 0;
+  padding-top: 63px;
+  padding-bottom: 42px;
+
+  @media (min-width: 768px) {
+    padding-top: 111px;
+    padding-bottom: 62px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 131px;
+    padding-bottom: 91px;
+  }
+}
+
+.slider__title {
+  @extend %title;
+  margin-bottom: 33px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+
+  .slider--rooms & {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -51px;
+      left: 0;
+      z-index: -1;
+      width: 150px;
+      height: 46px;
+      background: url("../img/page_bg-fish.svg") center / contain no-repeat;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 51px;
+    padding-right: 45px;
+    padding-left: 45px;
+
+    .slider--rooms & {
+      &::after {
+        bottom: -104px;
+        width: 339px;
+        height: 106px;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 61px;
+    padding-right: 55px;
+    padding-left: 55px;
+
+    .slider--rooms & {
+      &::after {
+        bottom: -126px;
+        left: -43px;
+        width: 484px;
+        height: 151px;
+      }
+    }
+  }
+}
+
+.slider__track {
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: 768px) {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-right: 55px;
+    padding-left: 55px;
+  }
+}
+
+.slider__list {
+  display: flex;
+  width: 290px;
+  margin-right: auto;
+  margin-left: auto;
+
+  .no-js & {
+    overflow: auto;
+    touch-action: auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 678px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1030px;
+  }
+}
+
+.slider__room {
+  width: 290px;
+
+  .no-js & {
+    flex-shrink: 0;
+  }
+
+  &:not(:first-child) {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: 678px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1030px;
+  }
+}
+
+.slider__room-image {
+  img {
+    display: block;
+    width: 290px;
+    border-radius: 8px 8px 0 0;
+
+    @media (min-width: 768px) {
+      width: 442px;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 600px;
+    }
+  }
+}
+
+.slider__room-content {
+  box-sizing: border-box;
+  padding: 20px 25px 25px;
+  background-color: $colorWhite;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 25px rgba($colorShadow, 0.25);
+  transition: box-shadow 0.3s;
+
+  @each $state in hover, focus-within {
+    .slider__room:#{$state} & {
+      box-shadow: 0 0 25px rgba($colorShadow, 0.75);
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 345px;
+    min-height: 266px;
+    margin-left: -109px;
+    padding: 35px 40px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 500px;
+    min-height: 284px;
+    margin-left: -70px;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+
+.slider__room-title {
+  @extend %subtitle;
+  margin-bottom: 16px;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 21px;
+    font-size: $fontSizeSubtitleLarge;
+  }
+}
+
+.slider__room-list {
+  @extend %list-reset;
+  margin-bottom: 19px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+}
+
+.slider__room-item {
+  position: relative;
+  margin-bottom: 7px;
+  padding-left: 19px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    background-color: $colorPrimary;
+    border-radius: 50%;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 11px;
+    padding-left: 21px;
+
+    &::before {
+      top: 3px;
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+.slider__bullets {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 290px;
+  transform: translateX(50%);
+
+  @media (min-width: 1280px) {
+    bottom: 24px;
+  }
+}
+
+.slider__bullet {
+  width: 12px;
+  height: 12px;
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-left: 6px;
+  padding: 0;
+  background-color: $colorGray;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: background-color, opacity;
+
+  &--active {
+    background-color: $colorPrimary;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.slider__arrows {
+  position: absolute;
+  right: 125px;
+  bottom: 12px;
+  display: none;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+    width: 82px;
+  }
+}
+
+.slider__arrow {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: $colorWhite;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba($colorShadowButton, 0.25);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 5px;
+    height: 5px;
+    border: 0 solid $colorSecondary;
+    border-width: 2px 2px 0 0;
+  }
+
+  &--prev {
+    &::before {
+      left: 15px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &--next {
+    &::before {
+      right: 15px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 2px 12px rgba($colorShadowButton, 0.5);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}

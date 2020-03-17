@@ -85,7 +85,7 @@
       </div>
     </header>
     <main>
-      <section class="hero page__hero">
+      <section class="hero">
         <div class="hero__wrapper">
           <div class="hero__inner">
             <div class="hero__content">
@@ -131,65 +131,67 @@
       <section class="slider slider--rooms page__slider" id="rooms">
         <div class="slider__wrapper">
           <h2 class="slider__title">Номера</h2>
-          <div class="slider__list">
-            <div class="slider__room">
-              <picture class="slider__room-image">
-                <source srcset="img/slider_rooms-01-desktop@1x.webp 1x, img/slider_rooms-01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
-                <source srcset="img/slider_rooms-01-tablet@1x.webp 1x, img/slider_rooms-01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                <source srcset="img/slider_rooms-01-mobile@1x.webp 1x, img/slider_rooms-01-mobile@2x.webp 2x" type="image/webp">
-                <source srcset="img/slider_rooms-01-desktop@1x.jpg 1x, img/slider_rooms-01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
-                <source srcset="img/slider_rooms-01-tablet@1x.jpg 1x, img/slider_rooms-01-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                <source srcset="img/slider_rooms-01-mobile@1x.jpg 1x, img/slider_rooms-01-mobile@2x.jpg 2x">
-                <img src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404">
-              </picture>
-              <div class="slider__room-content">
-                <h3 class="slider__room-title">Эконом плюс</h3>
-                <ul class="slider__room-list">
-                  <li class="slider__room-item">Площадь - 0,90 м2</li>
-                  <li class="slider__room-item">Размеры (ШхГхВ) — 90х100х180 см</li>
-                  <li class="slider__room-item">Цена за сутки: 200₽</li>
-                </ul>
-                <a class="button" href="room.html">Забронировать</a>
+          <div class="slider__track">
+            <div class="slider__list">
+              <div class="slider__room">
+                <picture class="slider__room-image">
+                  <source srcset="img/slider_rooms-01-desktop@1x.webp 1x, img/slider_rooms-01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/slider_rooms-01-tablet@1x.webp 1x, img/slider_rooms-01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/slider_rooms-01-mobile@1x.webp 1x, img/slider_rooms-01-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/slider_rooms-01-desktop@1x.jpg 1x, img/slider_rooms-01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/slider_rooms-01-tablet@1x.jpg 1x, img/slider_rooms-01-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/slider_rooms-01-mobile@1x.jpg 1x, img/slider_rooms-01-mobile@2x.jpg 2x">
+                  <img src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404">
+                </picture>
+                <div class="slider__room-content">
+                  <h3 class="slider__room-title">Эконом плюс</h3>
+                  <ul class="slider__room-list">
+                    <li class="slider__room-item">Площадь - 0,90 м2</li>
+                    <li class="slider__room-item">Размеры (ШхГхВ) — 90х100х180 см</li>
+                    <li class="slider__room-item">Цена за сутки: 200₽</li>
+                  </ul>
+                  <a class="button" href="room.html">Забронировать</a>
+                </div>
               </div>
-            </div>
-            <div class="slider__room">
-              <picture class="slider__room-image">
-                <source srcset="img/slider_rooms-02-desktop@1x.webp 1x, img/slider_rooms-02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
-                <source srcset="img/slider_rooms-02-tablet@1x.webp 1x, img/slider_rooms-02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                <source srcset="img/slider_rooms-02-mobile@1x.webp 1x, img/slider_rooms-02-mobile@2x.webp 2x" type="image/webp">
-                <source srcset="img/slider_rooms-02-desktop@1x.jpg 1x, img/slider_rooms-02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
-                <source srcset="img/slider_rooms-02-tablet@1x.jpg 1x, img/slider_rooms-02-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                <source srcset="img/slider_rooms-02-mobile@1x.jpg 1x, img/slider_rooms-02-mobile@2x.jpg 2x">
-                <img src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404">
-              </picture>
-              <div class="slider__room-content">
-                <h3 class="slider__room-title">Комфорт</h3>
-                <ul class="slider__room-list">
-                  <li class="slider__room-item">Площадь - 1,13 м2</li>
-                  <li class="slider__room-item">Размеры (ШхГхВ) - 100х125х180 см</li>
-                  <li class="slider__room-item">Цена за сутки: 250₽</li>
-                </ul>
-                <a class="button" href="room.html">Забронировать</a>
+              <div class="slider__room">
+                <picture class="slider__room-image">
+                  <source srcset="img/slider_rooms-02-desktop@1x.webp 1x, img/slider_rooms-02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/slider_rooms-02-tablet@1x.webp 1x, img/slider_rooms-02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/slider_rooms-02-mobile@1x.webp 1x, img/slider_rooms-02-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/slider_rooms-02-desktop@1x.jpg 1x, img/slider_rooms-02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/slider_rooms-02-tablet@1x.jpg 1x, img/slider_rooms-02-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/slider_rooms-02-mobile@1x.jpg 1x, img/slider_rooms-02-mobile@2x.jpg 2x">
+                  <img src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404">
+                </picture>
+                <div class="slider__room-content">
+                  <h3 class="slider__room-title">Комфорт</h3>
+                  <ul class="slider__room-list">
+                    <li class="slider__room-item">Площадь - 1,13 м2</li>
+                    <li class="slider__room-item">Размеры (ШхГхВ) - 100х125х180 см</li>
+                    <li class="slider__room-item">Цена за сутки: 250₽</li>
+                  </ul>
+                  <a class="button" href="room.html">Забронировать</a>
+                </div>
               </div>
-            </div>
-            <div class="slider__room">
-              <picture class="slider__room-image">
-                <source srcset="img/slider_rooms-03-desktop@1x.webp 1x, img/slider_rooms-03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
-                <source srcset="img/slider_rooms-03-tablet@1x.webp 1x, img/slider_rooms-03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                <source srcset="img/slider_rooms-03-mobile@1x.webp 1x, img/slider_rooms-03-mobile@2x.webp 2x" type="image/webp">
-                <source srcset="img/slider_rooms-03-desktop@1x.jpg 1x, img/slider_rooms-03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
-                <source srcset="img/slider_rooms-03-tablet@1x.jpg 1x, img/slider_rooms-03-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                <source srcset="img/slider_rooms-03-mobile@1x.jpg 1x, img/slider_rooms-03-mobile@2x.jpg 2x">
-                <img src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404">
-              </picture>
-              <div class="slider__room-content">
-                <h3 class="slider__room-title">Сьют</h3>
-                <ul class="slider__room-list">
-                  <li class="slider__room-item">Площадь - 1,56 м2</li>
-                  <li class="slider__room-item">Размеры (ШхГхВ) - 125х125х180 см</li>
-                  <li class="slider__room-item">Цена за сутки: 350₽</li>
-                </ul>
-                <a class="button" href="room.html">Забронировать</a>
+              <div class="slider__room">
+                <picture class="slider__room-image">
+                  <source srcset="img/slider_rooms-03-desktop@1x.webp 1x, img/slider_rooms-03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                  <source srcset="img/slider_rooms-03-tablet@1x.webp 1x, img/slider_rooms-03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="img/slider_rooms-03-mobile@1x.webp 1x, img/slider_rooms-03-mobile@2x.webp 2x" type="image/webp">
+                  <source srcset="img/slider_rooms-03-desktop@1x.jpg 1x, img/slider_rooms-03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
+                  <source srcset="img/slider_rooms-03-tablet@1x.jpg 1x, img/slider_rooms-03-tablet@2x.jpg 2x" media="(min-width: 768px)">
+                  <source srcset="img/slider_rooms-03-mobile@1x.jpg 1x, img/slider_rooms-03-mobile@2x.jpg 2x">
+                  <img src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404">
+                </picture>
+                <div class="slider__room-content">
+                  <h3 class="slider__room-title">Сьют</h3>
+                  <ul class="slider__room-list">
+                    <li class="slider__room-item">Площадь - 1,56 м2</li>
+                    <li class="slider__room-item">Размеры (ШхГхВ) - 125х125х180 см</li>
+                    <li class="slider__room-item">Цена за сутки: 350₽</li>
+                  </ul>
+                  <a class="button" href="room.html">Забронировать</a>
+                </div>
               </div>
             </div>
           </div>
