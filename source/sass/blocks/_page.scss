@@ -13,7 +13,7 @@
 .page__header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .page__features {
@@ -32,4 +32,8 @@
   @media (min-width: 1280px) {
     margin-bottom: -12px;
   }
+}
+
+.page__catalog {
+  margin-bottom: -30px;
 }

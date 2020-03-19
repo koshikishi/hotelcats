@@ -27,6 +27,16 @@
     background-image: url("../img/button_icon-inverse.svg");
   }
 
+  &--catalog {
+    min-height: 46px;
+    padding: 15px 50px 14px 24px;
+    font-size: $fontSizeTextSmall;
+    line-height: $lineHeightTextSmall;
+    background-position: center right 6px;
+    background-size: 34px;
+    box-shadow: none;
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -39,5 +49,15 @@
 
   @media (min-width: 768px) {
     width: auto;
+
+    &--catalog {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &--catalog {
+      padding-left: 21px;
+    }
   }
 }
