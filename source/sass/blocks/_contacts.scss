@@ -1,15 +1,3 @@
-.contacts {
-  padding-top: 71px;
-
-  @media (min-width: 768px) {
-    padding-top: 120px;
-  }
-
-  @media (min-width: 1280px) {
-    padding-top: 140px;
-  }
-}
-
 .contacts__wrapper {
   @extend %container-wide;
   background-color: $colorPrimary;
@@ -46,7 +34,7 @@
     width: 426px;
     max-width: none;
     margin-right: 0;
-    padding: 60px 55px 59px;
+    padding: 61px 55px 58px;
   }
 }
 

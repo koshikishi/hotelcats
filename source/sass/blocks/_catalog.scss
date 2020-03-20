@@ -1,16 +1,7 @@
 .catalog__wrapper {
   @extend %container-narrow;
-  padding-top: 34px;
   padding-right: 0;
   padding-left: 0;
-
-  @media (min-width: 768px) {
-    padding-top: 51px;
-  }
-
-  @media (min-width: 1280px) {
-    padding-top: 61px;
-  }
 }
 
 .catalog__heading {

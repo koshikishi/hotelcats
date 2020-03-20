@@ -16,24 +16,53 @@
   z-index: 2;
 }
 
-.page__features {
-  margin-bottom: -31px;
+.page__rooms {
+  margin-bottom: 32px;
 
   @media (min-width: 768px) {
-    margin-bottom: -30px;
+    margin-bottom: 30px;
   }
 
   @media (min-width: 1280px) {
-    margin-bottom: -20px;
+    margin-bottom: 8px;
   }
 }
 
-.page__slider {
+.page__testimonials {
+  margin-bottom: 70px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
   @media (min-width: 1280px) {
-    margin-bottom: -12px;
+    margin-bottom: 128px;
   }
 }
 
 .page__catalog {
-  margin-bottom: -30px;
+  margin-top: 34px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    margin-top: 51px;
+    margin-bottom: 90px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 61px;
+    margin-bottom: 110px;
+  }
+}
+
+.page__offer {
+  margin-bottom: 70px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 120px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 140px;
+  }
 }

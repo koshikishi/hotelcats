@@ -8,14 +8,14 @@
   @extend %container-narrow;
   position: relative;
   padding: 0;
-  padding-top: 63px;
+  padding-top: 32px;
   padding-bottom: 42px;
 
   .slider--testimonials & {
     &::before {
       content: "";
       position: absolute;
-      top: 56px;
+      top: 25px;
       right: -26px;
       z-index: -1;
       width: 112px;
@@ -26,12 +26,12 @@
   }
 
   @media (min-width: 768px) {
-    padding-top: 111px;
+    padding-top: 81px;
     padding-bottom: 62px;
 
     .slider--testimonials & {
       &::before {
-        top: 62px;
+        top: 32px;
         right: -16px;
         width: 227px;
         height: 194px;
@@ -40,12 +40,12 @@
   }
 
   @media (min-width: 1280px) {
-    padding-top: 131px;
+    padding-top: 111px;
     padding-bottom: 91px;
 
     .slider--testimonials & {
       &::before {
-        top: 31px;
+        top: 11px;
         right: -93px;
         width: 312px;
         height: 267px;
@@ -191,6 +191,7 @@
 }
 
 .slider__room-content {
+  position: relative;
   box-sizing: border-box;
   padding: 20px 25px 25px;
   background-color: $colorWhite;
