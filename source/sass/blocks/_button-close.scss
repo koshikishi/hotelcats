@@ -44,4 +44,14 @@
       transform: rotate(-45deg) scaleX(0.8);
     }
   }
+
+  @media (min-width: 1280px) {
+    width: 26px;
+    height: 26px;
+
+    &::before,
+    &::after {
+      top: 12px;
+    }
+  }
 }

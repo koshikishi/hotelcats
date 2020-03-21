@@ -42,3 +42,6 @@
 
 // Подключаем стили блока номера
 @import "blocks/room";
+
+// Подключаем стили всплывающих окон бронирования и подтверждения заявки
+@import "blocks/modal", "blocks/reservation-form";

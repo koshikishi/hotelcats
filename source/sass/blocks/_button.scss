@@ -39,6 +39,20 @@
     box-shadow: none;
   }
 
+  &--small {
+    width: auto;
+    min-width: 122px;
+    padding-top: 17px;
+    padding-bottom: 14px;
+    padding-left: 17px;
+    box-shadow: none;
+  }
+
+  &--wide {
+    min-width: 230px;
+    padding-left: 16px;
+  }
+
   &:hover,
   &:focus {
     outline: none;

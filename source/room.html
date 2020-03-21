@@ -349,45 +349,51 @@
     </footer>
     <div class="overlay"></div>
     <section class="modal modal--reservation">
-      <h2 class="modal__title">Забронировать номер</h2>
-      <form class="reservation-form" action="#" method="post">
-        <div class="reservation-form__field">
-          <label class="visually-hidden" for="username">Ваше имя</label>
-          <input class="reservation-form__field-input" id="username" type="text" name="username" placeholder="Ваше имя" required>
-        </div>
-        <div class="reservation-form__field">
-          <label class="visually-hidden" for="petname">Имя Питомца</label>
-          <input class="reservation-form__field-input" id="petname" type="text" name="petname" placeholder="Имя Питомца" required>
-        </div>
-        <div class="reservation-form__field">
-          <label class="visually-hidden" for="phone">Телефон</label>
-          <input class="reservation-form__field-input" id="phone" type="tel" name="phone" placeholder="Телефон" required>
-        </div>
-        <div class="reservation-form__field">
-          <label class="visually-hidden" for="email">E-mail</label>
-          <input class="reservation-form__field-input" id="email" type="email" name="email" placeholder="E-mail">
-        </div>
-        <div class="reservation-form__cols">
-          <p>Дата заезда</p>
-          <div class="reservation-form__field reservation-form__field--narrow">
-            <label for="firstday">с</label>
-            <input class="reservation-form__field-input" id="firstday" type="date" name="firstday" aria-label="Дата заезда" required>
+      <div class="modal__inner">
+        <h2 class="modal__title">Забронировать номер</h2>
+        <form class="reservation-form" action="#" method="post">
+          <div class="reservation-form__field">
+            <label class="visually-hidden" for="username">Ваше имя</label>
+            <input class="reservation-form__field-input" id="username" type="text" name="username" placeholder="Ваше имя" required>
           </div>
-          <div class="reservation-form__field reservation-form__field--narrow">
-            <label for="lastday">по</label>
-            <input class="reservation-form__field-input" id="lastday" type="date" name="lastday" aria-label="Дата выезда" required>
+          <div class="reservation-form__field">
+            <label class="visually-hidden" for="petname">Имя Питомца</label>
+            <input class="reservation-form__field-input" id="petname" type="text" name="petname" placeholder="Имя Питомца" required>
           </div>
-        </div>
-        <button class="button button--wide" type="submit">Отправить заявку</button>
-      </form>
+          <div class="reservation-form__field">
+            <label class="visually-hidden" for="phone">Телефон</label>
+            <input class="reservation-form__field-input" id="phone" type="tel" name="phone" placeholder="Телефон" required>
+          </div>
+          <div class="reservation-form__field">
+            <label class="visually-hidden" for="email">E-mail</label>
+            <input class="reservation-form__field-input" id="email" type="email" name="email" placeholder="E-mail">
+          </div>
+          <div class="reservation-form__fields">
+            <p>Дата заезда</p>
+            <div class="reservation-form__cols">
+              <div class="reservation-form__field reservation-form__field--narrow">
+                <label for="firstday">с</label>
+                <input class="reservation-form__field-input" id="firstday" type="date" name="firstday" aria-label="Дата заезда" required>
+              </div>
+              <div class="reservation-form__field reservation-form__field--narrow">
+                <label for="lastday">по</label>
+                <input class="reservation-form__field-input" id="lastday" type="date" name="lastday" aria-label="Дата выезда" required>
+              </div>
+            </div>
+          </div>
+          <button class="button button--wide modal__button" type="submit">Отправить заявку</button>
+        </form>
+      </div>
       <button class="button-close modal__close" type="button">
         <span class="visually-hidden">Закрыть</span>
       </button>
     </section>
     <div class="modal modal--thanks">
-      <b class="modal__title">Спасибо за заявку!</b>
-      <p>Мы свяжемся с вами в&nbsp;ближайшее время</p>
-      <button class="button button--small" type="button">Ок</button>
+      <div class="modal__inner">
+        <b class="modal__title">Спасибо за заявку!</b>
+        <p class="modal__text">Мы свяжемся с вами в&nbsp;ближайшее время</p>
+        <button class="button button--small" type="button">Ок</button>
+      </div>
       <button class="button-close modal__close" type="button">
         <span class="visually-hidden">Закрыть</span>
       </button>
