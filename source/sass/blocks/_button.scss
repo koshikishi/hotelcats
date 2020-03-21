@@ -3,8 +3,9 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 206px;
+  max-width: 290px;
   min-height: 50px;
-  padding: 16px 50px 15px 16px;
+  padding: 16px 50px 15px 23px;
   font-weight: $fontWeightSemibold;
   font-size: $fontSizeTextLarge;
   line-height: $lineHeightSmall;
@@ -22,6 +23,7 @@
 
   &--inverse {
     width: auto;
+    padding-left: 16px;
     color: $colorText;
     background-color: $colorBackground;
     background-image: url("../img/button_icon-inverse.svg");
@@ -49,9 +51,11 @@
 
   @media (min-width: 768px) {
     width: auto;
+    padding-left: 17px;
 
     &--catalog {
       width: 100%;
+      padding-left: 24px;
     }
   }
 

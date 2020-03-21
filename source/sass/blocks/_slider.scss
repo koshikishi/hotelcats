@@ -57,8 +57,8 @@
 .slider__title {
   @extend %title;
   margin-bottom: 33px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 55px;
+  padding-left: 55px;
   text-align: center;
 
   .slider--rooms & {
@@ -78,8 +78,6 @@
 
   @media (min-width: 768px) {
     margin-bottom: 51px;
-    padding-right: 45px;
-    padding-left: 45px;
 
     .slider--rooms & {
       &::after {
@@ -92,8 +90,6 @@
 
   @media (min-width: 1280px) {
     margin-bottom: 61px;
-    padding-right: 55px;
-    padding-left: 55px;
 
     .slider--rooms & {
       &::after {
