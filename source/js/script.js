@@ -50,6 +50,35 @@ if (filter) {
   };
 }
 
+// Оживление выпадающего меню сортировки
+const sorting = document.querySelector(`.sorting`);
+
+if (sorting) {
+  const sortingToggleBtn = sorting.querySelector(`.sorting__option--toggle`);
+  const sortingOptions = sorting.querySelectorAll(`.sorting__options .sorting__option`);
+
+  // Создание CSS-правил для анимации меню сортировки
+  const sortingOptionsHeight = sortingToggleBtn.offsetHeight * sortingOptions.length;
+  const styleElmnt = document.createElement(`style`);
+
+  document.head.appendChild(styleElmnt);
+
+  for (let i = 0, j = [`-webkit-keyframes`, `keyframes`]; i < j.length; i++) {
+    styleElmnt.sheet.insertRule(`@${j[i]} sorting{from{height:0}to{height:${sortingOptionsHeight}px}}`, i);
+  }
+
+  sortingToggleBtn.onclick = (evt) => {
+    evt.preventDefault();
+    sortingToggle();
+  };
+
+  for (let i = 0; i < sortingOptions.length; i++) {
+    sortingOptions[i].onclick = () => {
+      sortingClose();
+    };
+  }
+}
+
 // Закрытие всплывающих окон клавишей ESC
 window.onkeydown = (evt) => {
   if (evt.keyCode === 27) {
@@ -63,6 +92,11 @@ window.onkeydown = (evt) => {
     // Проверка, открыто ли окно фильтра
     if (filter && filter.classList.contains(`filter--shown`)) {
       filterClose();
+    }
+
+    // Проверка, открыто ли меню сортировки
+    if (sorting && sorting.classList.contains(`sorting--opened`)) {
+      sortingClose();
     }
   }
 };
@@ -114,6 +148,43 @@ function filterClose() {
     overlay.classList.remove(`overlay--shown`);
     overlay.removeAttribute(`style`);
   }, 500);
+}
+
+// Появление и закрытие меню сортировки
+function sortingToggle() {
+  if (sorting.classList.contains(`sorting--opened`)) {
+    sortingClose();
+  } else {
+    sortingOpen();
+  }
+}
+
+// Появление меню сортировки
+function sortingOpen() {
+  sorting.classList.add(`sorting--opened`);
+
+  window.addEventListener(`click`, handleSortingOutsideClick);
+}
+
+// Закрытие меню сортировки
+function sortingClose() {
+  cssAnimationReset(sorting, `sorting--opened`);
+  sorting.lastChild.style.animationDirection = `reverse`;
+
+  window.removeEventListener(`click`, handleSortingOutsideClick);
+
+  window.setTimeout(() => {
+    sorting.classList.remove(`sorting--opened`);
+    sorting.lastChild.removeAttribute(`style`);
+  }, 500);
+}
+
+// Закрытие меню сортировки по клику вне меню
+function handleSortingOutsideClick(evt) {
+  if (!sorting.contains(evt.target)) {
+    evt.preventDefault();
+    sortingClose();
+  }
 }
 
 // Сброс CSS-анимации

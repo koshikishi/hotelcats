@@ -32,10 +32,15 @@
 
 .sorting__options {
   display: none;
+  overflow: hidden;
 
   .sorting--opened &,
   .no-js .sorting:hover & {
     display: block;
+  }
+
+  .sorting--opened & {
+    animation: 0.5s both sorting;
   }
 }
 
