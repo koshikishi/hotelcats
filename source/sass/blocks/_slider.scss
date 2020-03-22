@@ -6,6 +6,7 @@
 
 .slider__wrapper {
   @extend %container-narrow;
+  position: relative;
   padding: 0;
   padding-top: 32px;
 
@@ -100,22 +101,35 @@
 
 .slider__inner {
   position: relative;
+  width: 290px;
   margin-right: auto;
   margin-left: auto;
 
-  .slider--rooms & {
-    width: 290px;
+  @media (min-width: 640px) {
+    .slider--testimonials & {
+      width: 610px;
+    }
   }
 
   @media (min-width: 768px) {
-    .slider--rooms & {
-      width: 678px;
+    width: 678px;
+
+    .slider--testimonials & {
+      width: 442px;
+    }
+  }
+
+  @media (min-width: 944px) {
+    .slider--testimonials & {
+      width: 914px;
     }
   }
 
   @media (min-width: 1280px) {
-    .slider--rooms & {
-      width: 1030px;
+    width: 1030px;
+
+    .slider--testimonials & {
+      width: 970px;
     }
   }
 }
@@ -134,13 +148,6 @@
     padding-right: 20px;
     padding-bottom: 62px;
     padding-left: 20px;
-
-    @media (max-width: 1279px) {
-      .slider--testimonials & {
-        padding-right: 45px;
-        padding-left: 45px;
-      }
-    }
   }
 
   @media (min-width: 1280px) {
@@ -281,7 +288,6 @@
   box-sizing: border-box;
   width: 290px;
   margin: 0;
-  margin-right: 30px;
   padding: 22px 19px 19px 56px;
   background-color: $colorWhite;
   border-radius: 8px;
@@ -290,10 +296,6 @@
 
   &:hover {
     box-shadow: 0 0 25px rgba($colorShadow, 0.75);
-  }
-
-  &:last-child {
-    margin-right: 0;
   }
 
   .no-js & {

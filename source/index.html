@@ -222,49 +222,51 @@
       <section class="slider slider--testimonials page__testimonials" id="testimonials">
         <div class="slider__wrapper">
           <h2 class="slider__title">Отзывы</h2>
-          <div class="slider__track">
-            <div class="slider__list">
-              <blockquote class="slider__testimonial">
-                <p class="slider__testimonial-text">Первый раз пришлось оставить нашего котика в&nbsp;гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И&nbsp;мы и котик остались очень довольны!</p>
-                <footer class="slider__testimonial-meta">
-                  <cite class="slider__testimonial-author">Валерия Гришаева</cite>
-                  <time class="slider__testimonial-date" datetime="2019-11-15">15 ноября, 2019</time>
-                </footer>
-              </blockquote>
-              <blockquote class="slider__testimonial">
-                <p class="slider__testimonial-text">Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.</p>
-                <footer class="slider__testimonial-meta">
-                  <cite class="slider__testimonial-author">Екатерина Минаева</cite>
-                  <time class="slider__testimonial-date" datetime="2019-10-10">10 октября, 2019</time>
-                </footer>
-              </blockquote>
-              <blockquote class="slider__testimonial">
-                <p class="slider__testimonial-text">Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.</p>
-                <footer class="slider__testimonial-meta">
-                  <cite class="slider__testimonial-author">Павел Нечаев</cite>
-                  <time class="slider__testimonial-date" datetime="2019-08-02">2 августа, 2019</time>
-                </footer>
-              </blockquote>
+          <div class="slider__inner glide">
+            <div class="slider__track glide__track" data-glide-el="track">
+              <div class="slider__list glide__slides">
+                <blockquote class="slider__testimonial glide__slide">
+                  <p class="slider__testimonial-text">Первый раз пришлось оставить нашего котика в&nbsp;гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И&nbsp;мы и котик остались очень довольны!</p>
+                  <footer class="slider__testimonial-meta">
+                    <cite class="slider__testimonial-author">Валерия Гришаева</cite>
+                    <time class="slider__testimonial-date" datetime="2019-11-15">15 ноября, 2019</time>
+                  </footer>
+                </blockquote>
+                <blockquote class="slider__testimonial glide__slide">
+                  <p class="slider__testimonial-text">Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.</p>
+                  <footer class="slider__testimonial-meta">
+                    <cite class="slider__testimonial-author">Екатерина Минаева</cite>
+                    <time class="slider__testimonial-date" datetime="2019-10-10">10 октября, 2019</time>
+                  </footer>
+                </blockquote>
+                <blockquote class="slider__testimonial glide__slide">
+                  <p class="slider__testimonial-text">Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.</p>
+                  <footer class="slider__testimonial-meta">
+                    <cite class="slider__testimonial-author">Павел Нечаев</cite>
+                    <time class="slider__testimonial-date" datetime="2019-08-02">2 августа, 2019</time>
+                  </footer>
+                </blockquote>
+              </div>
             </div>
-          </div>
-          <div class="slider__bullets">
-            <button class="slider__bullet slider__bullet--active" type="button">
-              <span class="visually-hidden">Отзыв Валерии Гришаевой</span>
-            </button>
-            <button class="slider__bullet" type="button">
-              <span class="visually-hidden">Отзыв Екатерины Минаевой</span>
-            </button>
-            <button class="slider__bullet" type="button">
-              <span class="visually-hidden">Отзыв Павла Нечаева</span>
-            </button>
-          </div>
-          <div class="slider__arrows">
-            <button class="slider__arrow slider__arrow--prev" type="button">
-              <span class="visually-hidden">Предыдущий отзыв</span>
-            </button>
-            <button class="slider__arrow slider__arrow--next" type="button">
-              <span class="visually-hidden">Следующий отзыв</span>
-            </button>
+            <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+              <button class="slider__bullet slider__bullet--active glide__bullet" type="button" data-glide-dir="=0">
+                <span class="visually-hidden">Отзыв Валерии Гришаевой</span>
+              </button>
+              <button class="slider__bullet glide__bullet" type="button" data-glide-dir="=1">
+                <span class="visually-hidden">Отзыв Екатерины Минаевой</span>
+              </button>
+              <button class="slider__bullet glide__bullet" type="button" data-glide-dir="=2">
+                <span class="visually-hidden">Отзыв Павла Нечаева</span>
+              </button>
+            </div>
+            <div class="slider__arrows glide__arrows" data-glide-el="controls">
+              <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--left" type="button" data-glide-dir="<">
+                <span class="visually-hidden">Предыдущий отзыв</span>
+              </button>
+              <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--right" type="button" data-glide-dir=">">
+                <span class="visually-hidden">Следующий отзыв</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

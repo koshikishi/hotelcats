@@ -187,6 +187,29 @@ if (document.querySelector(`.slider--rooms .slider__inner`)) {
   }).mount();
 }
 
+// Оживление слайдера отзывов
+if (document.querySelector(`.slider--testimonials .slider__inner`)) {
+  new Glide(`.slider--testimonials .slider__inner`, {
+    type: `carousel`,
+    perView: 2,
+    gap: 30,
+    breakpoints: {
+      943: {
+        perView: 1
+      },
+      767: {
+        perView: 2
+      },
+      639: {
+        perView: 1
+      }
+    },
+    classes: {
+      activeNav: `slider__bullet--active`
+    }
+  }).mount();
+}
+
 // Появление элемента
 function elementOpen(elmnt, cls, ovrl = true) {
   elmnt.classList.add(cls);
