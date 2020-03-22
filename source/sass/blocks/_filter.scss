@@ -13,6 +13,7 @@
 
   &--shown {
     display: flex;
+    animation: 0.5s both filter;
   }
 
   .page--form & {
@@ -39,6 +40,10 @@
     border-radius: 0;
     box-shadow: none;
     transform: none;
+
+    &--shown {
+      animation: none;
+    }
   }
 }
 

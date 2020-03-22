@@ -13,18 +13,6 @@ menuMobileClose.onclick = (evt) => {
   menuClose();
 };
 
-// Закрытие мобильного меню клавишей ESC
-window.onkeydown = (evt) => {
-  if (evt.keyCode === 27) {
-    evt.preventDefault();
-
-    // Проверка, открыто ли мобильного меню
-    if (menuMobile.classList.contains(`menu-mobile--shown`)) {
-      menuClose();
-    }
-  }
-};
-
 // Плавная прокрутка к якорю
 const menuLinks = document.querySelectorAll(`.menu__link`);
 
@@ -43,6 +31,52 @@ for (let i = 0; i < menuLinks.length; i++) {
   }
 }
 
+// Оживление фильтра каталога
+const overlay = document.querySelector(`.overlay`);
+const filter = document.querySelector(`.filter`);
+
+if (filter) {
+  const filterOpenBtn = document.querySelector(`.catalog__filter`);
+  const filterCloseBtn = filter.querySelector(`.filter__close`);
+
+  filterOpenBtn.onclick = (evt) => {
+    evt.preventDefault();
+    filterOpen();
+  };
+
+  filterCloseBtn.onclick = (evt) => {
+    evt.preventDefault();
+    filterClose();
+  };
+}
+
+// Закрытие всплывающих окон клавишей ESC
+window.onkeydown = (evt) => {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+
+    // Проверка, открыто ли мобильного меню
+    if (menuMobile.classList.contains(`menu-mobile--shown`)) {
+      menuClose();
+    }
+
+    // Проверка, открыто ли окно фильтра
+    if (filter && filter.classList.contains(`filter--shown`)) {
+      filterClose();
+    }
+  }
+};
+
+// Закрытие всплывающих окон по клику вне окна
+if (overlay) {
+  overlay.onclick = () => {
+    // Проверка, открыто ли окно фильтра
+    if (filter && filter.classList.contains(`filter--shown`)) {
+      filterClose();
+    }
+  };
+}
+
 // Появление мобильного меню
 function menuOpen() {
   menuMobile.classList.add(`menu-mobile--shown`);
@@ -56,6 +90,29 @@ function menuClose() {
   window.setTimeout(() => {
     menuMobile.classList.remove(`menu-mobile--shown`);
     menuMobile.removeAttribute(`style`);
+  }, 500);
+}
+
+// Появление фильтра каталога
+function filterOpen() {
+  filter.classList.add(`filter--shown`);
+  overlay.classList.add(`overlay--shown`);
+}
+
+// Закрытие фильтра каталога
+function filterClose() {
+  cssAnimationReset(filter, `filter--shown`);
+  filter.style.animationDirection = `reverse`;
+
+  cssAnimationReset(overlay, `overlay--shown`);
+  overlay.style.animationDirection = `reverse`;
+
+  window.setTimeout(() => {
+    filter.classList.remove(`filter--shown`);
+    filter.removeAttribute(`style`);
+
+    overlay.classList.remove(`overlay--shown`);
+    overlay.removeAttribute(`style`);
   }, 500);
 }
 
