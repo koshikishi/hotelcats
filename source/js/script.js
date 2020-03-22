@@ -1,16 +1,16 @@
 // Оживление мобильного меню
 const menuMobile = document.getElementById(`menu`);
-const menuMobileOpen = document.querySelector(`.header__menu-toggle`);
-const menuMobileClose = menuMobile.querySelector(`.menu-mobile__close`);
+const menuMobileOpenBtn = document.querySelector(`.header__menu-toggle`);
+const menuMobileCloseBtn = menuMobile.querySelector(`.menu-mobile__close`);
 
-menuMobileOpen.onclick = (evt) => {
+menuMobileOpenBtn.onclick = (evt) => {
   evt.preventDefault();
-  menuOpen();
+  elementOpen(menuMobile, `menu-mobile--shown`, false);
 };
 
-menuMobileClose.onclick = (evt) => {
+menuMobileCloseBtn.onclick = (evt) => {
   evt.preventDefault();
-  menuClose();
+  elementClose(menuMobile, `menu-mobile--shown`, false);
 };
 
 // Плавная прокрутка к якорю
@@ -23,9 +23,9 @@ for (let i = 0; i < menuLinks.length; i++) {
       document.getElementById(menuLinks[i].hash.substring(1)).scrollIntoView({behavior: `smooth`});
       history.pushState(null, null, menuLinks[i].hash);
 
-      // Закрытие мобильного меню
+      // Закрытие мобильного меню после клика по ссылке
       if (menuMobile.contains(menuLinks[i])) {
-        menuClose();
+        elementClose(menuMobile, `menu-mobile--shown`, false);
       }
     };
   }
@@ -41,12 +41,12 @@ if (filter) {
 
   filterOpenBtn.onclick = (evt) => {
     evt.preventDefault();
-    filterOpen();
+    elementOpen(filter, `filter--shown`);
   };
 
   filterCloseBtn.onclick = (evt) => {
     evt.preventDefault();
-    filterClose();
+    elementClose(filter, `filter--shown`);
   };
 }
 
@@ -67,9 +67,16 @@ if (sorting) {
     styleElmnt.sheet.insertRule(`@${j[i]} sorting{from{height:0}to{height:${sortingOptionsHeight}px}}`, i);
   }
 
+  // Появление и закрытие меню сортировки
   sortingToggleBtn.onclick = (evt) => {
     evt.preventDefault();
-    sortingToggle();
+
+    if (sorting.classList.contains(`sorting--opened`)) {
+      sortingClose();
+    } else {
+      elementOpen(sorting, `sorting--opened`, false);
+      window.addEventListener(`click`, handleOutsideClick);
+    }
   };
 
   for (let i = 0; i < sortingOptions.length; i++) {
@@ -79,24 +86,72 @@ if (sorting) {
   }
 }
 
+// Оживление всплывающих окон бронирования и подтверждения заявки
+const reservation = document.querySelector(`.modal--reservation`);
+const thanks = document.querySelector(`.modal--thanks`);
+
+if (reservation) {
+  // Оживление всплывающего окна бронирования
+  const reservationOpenBtn = document.querySelector(`.room__button`);
+  const reservationCloseBtn = reservation.querySelector(`.modal__close`);
+
+  reservationOpenBtn.onclick = (evt) => {
+    evt.preventDefault();
+    elementOpen(reservation, `modal--shown`);
+  };
+
+  reservationCloseBtn.onclick = (evt) => {
+    evt.preventDefault();
+    elementClose(reservation, `modal--shown`);
+  };
+
+  // Оживление всплывающего окна подтверждения заявки
+  const thanksOkBtn = thanks.querySelector(`.button`);
+  const thanksCloseBtn = thanks.querySelector(`.modal__close`);
+  const reservationForm = reservation.querySelector(`.reservation-form`);
+
+  reservationForm.onsubmit = (evt) => {
+    evt.preventDefault(); // Форма не отправляется, это сделано для демонстрации всплывающих окон
+    elementClose(reservation, `modal--shown`, false);
+    elementOpen(thanks, `modal--shown`, false);
+  };
+
+  for (let i = 0, j = [thanksOkBtn, thanksCloseBtn]; i < j.length; i++) {
+    j[i].onclick = (evt) => {
+      evt.preventDefault();
+      elementClose(thanks, `modal--shown`);
+    };
+  }
+}
+
 // Закрытие всплывающих окон клавишей ESC
 window.onkeydown = (evt) => {
   if (evt.keyCode === 27) {
     evt.preventDefault();
 
-    // Проверка, открыто ли мобильного меню
+    // Закрытие мобильного меню
     if (menuMobile.classList.contains(`menu-mobile--shown`)) {
-      menuClose();
+      elementClose(menuMobile, `menu-mobile--shown`, false);
     }
 
-    // Проверка, открыто ли окно фильтра
+    // Закрытие фильтра каталога
     if (filter && filter.classList.contains(`filter--shown`)) {
-      filterClose();
+      elementClose(filter, `filter--shown`);
     }
 
-    // Проверка, открыто ли меню сортировки
+    // Закрытие меню сортировки
     if (sorting && sorting.classList.contains(`sorting--opened`)) {
       sortingClose();
+    }
+
+    // Закрытие окна бронирования
+    if (reservation && reservation.classList.contains(`modal--shown`)) {
+      elementClose(reservation, `modal--shown`);
+    }
+
+    // Закрытие окна подтверждения заявки
+    if (thanks && thanks.classList.contains(`modal--shown`)) {
+      elementClose(thanks, `modal--shown`);
     }
   }
 };
@@ -104,83 +159,55 @@ window.onkeydown = (evt) => {
 // Закрытие всплывающих окон по клику вне окна
 if (overlay) {
   overlay.onclick = () => {
-    // Проверка, открыто ли окно фильтра
+    // Закрытие фильтра каталога
     if (filter && filter.classList.contains(`filter--shown`)) {
-      filterClose();
+      elementClose(filter, `filter--shown`);
+    }
+
+    // Закрытие окна бронирования
+    if (reservation && reservation.classList.contains(`modal--shown`)) {
+      elementClose(reservation, `modal--shown`);
+    }
+
+    // Закрытие окна подтверждения заявки
+    if (thanks && thanks.classList.contains(`modal--shown`)) {
+      elementClose(thanks, `modal--shown`);
     }
   };
 }
 
-// Появление мобильного меню
-function menuOpen() {
-  menuMobile.classList.add(`menu-mobile--shown`);
-}
+// Появление элемента
+function elementOpen(elmnt, cls, ovrl = true) {
+  elmnt.classList.add(cls);
 
-// Закрытие мобильного меню
-function menuClose() {
-  cssAnimationReset(menuMobile, `menu-mobile--shown`);
-  menuMobile.style.animationDirection = `reverse`;
-
-  window.setTimeout(() => {
-    menuMobile.classList.remove(`menu-mobile--shown`);
-    menuMobile.removeAttribute(`style`);
-  }, 500);
-}
-
-// Появление фильтра каталога
-function filterOpen() {
-  filter.classList.add(`filter--shown`);
-  overlay.classList.add(`overlay--shown`);
-}
-
-// Закрытие фильтра каталога
-function filterClose() {
-  cssAnimationReset(filter, `filter--shown`);
-  filter.style.animationDirection = `reverse`;
-
-  cssAnimationReset(overlay, `overlay--shown`);
-  overlay.style.animationDirection = `reverse`;
-
-  window.setTimeout(() => {
-    filter.classList.remove(`filter--shown`);
-    filter.removeAttribute(`style`);
-
-    overlay.classList.remove(`overlay--shown`);
-    overlay.removeAttribute(`style`);
-  }, 500);
-}
-
-// Появление и закрытие меню сортировки
-function sortingToggle() {
-  if (sorting.classList.contains(`sorting--opened`)) {
-    sortingClose();
-  } else {
-    sortingOpen();
+  if (ovrl) {
+    elementOpen(overlay, `overlay--shown`, false);
   }
 }
 
-// Появление меню сортировки
-function sortingOpen() {
-  sorting.classList.add(`sorting--opened`);
+// Закрытие элемента
+function elementClose(elmnt1, cls, ovrl = true, elmnt2 = elmnt1) {
+  cssAnimationReset(elmnt1, cls);
+  elmnt2.style.animationDirection = `reverse`;
 
-  window.addEventListener(`click`, handleSortingOutsideClick);
+  if (ovrl) {
+    elementClose(overlay, `overlay--shown`, false);
+  }
+
+  window.setTimeout(() => {
+    elmnt1.classList.remove(cls);
+    elmnt2.removeAttribute(`style`);
+  }, 500);
 }
 
 // Закрытие меню сортировки
 function sortingClose() {
-  cssAnimationReset(sorting, `sorting--opened`);
-  sorting.lastChild.style.animationDirection = `reverse`;
-
-  window.removeEventListener(`click`, handleSortingOutsideClick);
-
-  window.setTimeout(() => {
-    sorting.classList.remove(`sorting--opened`);
-    sorting.lastChild.removeAttribute(`style`);
-  }, 500);
+  elementClose(sorting, `sorting--opened`, false, sorting.lastChild);
+  window.removeEventListener(`click`, handleOutsideClick);
 }
 
 // Закрытие меню сортировки по клику вне меню
-function handleSortingOutsideClick(evt) {
+function handleOutsideClick(evt) {
   if (!sorting.contains(evt.target)) {
     evt.preventDefault();
     sortingClose();
