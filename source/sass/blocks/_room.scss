@@ -89,10 +89,6 @@
     flex-shrink: 0;
   }
 
-  &:not(:first-child) {
-    display: none;
-  }
-
   img {
     display: block;
     width: 290px;
@@ -180,6 +176,7 @@
   }
 
   @media (min-width: 1280px) {
+    width: 70px;
     margin-right: 0;
     margin-bottom: 30px;
 

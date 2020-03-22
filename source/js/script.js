@@ -210,6 +210,17 @@ if (document.querySelector(`.slider--testimonials .slider__inner`)) {
   }).mount();
 }
 
+// Оживление галереи номера
+if (document.querySelector(`.room__gallery`)) {
+  new Glide(`.room__gallery`, {
+    type: `carousel`,
+    gap: 30,
+    classes: {
+      activeNav: `room__gallery-preview--active`
+    }
+  }).mount();
+}
+
 // Появление элемента
 function elementOpen(elmnt, cls, ovrl = true) {
   elmnt.classList.add(cls);

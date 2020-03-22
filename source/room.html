@@ -88,10 +88,10 @@
     <main>
       <section class="room page__room">
         <div class="room__wrapper">
-          <div class="room__gallery">
-            <div class="room__gallery-track">
-              <div class="room__gallery-list">
-                <picture class="room__gallery-image">
+          <div class="room__gallery glide">
+            <div class="room__gallery-track glide__track" data-glide-el="track">
+              <div class="room__gallery-list glide__slides">
+                <picture class="room__gallery-image glide__slide">
                   <source srcset="img/room_01-desktop@1x.webp 1x, img/room_01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_01-tablet@1x.webp 1x, img/room_01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/room_01-mobile@1x.webp 1x, img/room_01-mobile@2x.webp 2x" type="image/webp">
@@ -100,7 +100,7 @@
                   <source srcset="img/room_01-mobile@1x.jpg 1x, img/room_01-mobile@2x.jpg 2x">
                   <img src="img/room_01-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396">
                 </picture>
-                <picture class="room__gallery-image">
+                <picture class="room__gallery-image glide__slide">
                   <source srcset="img/room_02-desktop@1x.webp 1x, img/room_02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_02-tablet@1x.webp 1x, img/room_02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/room_02-mobile@1x.webp 1x, img/room_02-mobile@2x.webp 2x" type="image/webp">
@@ -109,7 +109,7 @@
                   <source srcset="img/room_02-mobile@1x.jpg 1x, img/room_02-mobile@2x.jpg 2x">
                   <img src="img/room_02-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396">
                 </picture>
-                <picture class="room__gallery-image">
+                <picture class="room__gallery-image glide__slide">
                   <source srcset="img/room_03-desktop@1x.webp 1x, img/room_03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_03-tablet@1x.webp 1x, img/room_03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/room_03-mobile@1x.webp 1x, img/room_03-mobile@2x.webp 2x" type="image/webp">
@@ -120,8 +120,8 @@
                 </picture>
               </div>
             </div>
-            <div class="room__gallery-previews">
-              <button class="room__gallery-preview room__gallery-preview--active" type="button">
+            <div class="room__gallery-previews glide__bullets" data-glide-el="controls[nav]">
+              <button class="room__gallery-preview room__gallery-preview--active glide__bullet" type="button" data-glide-dir="=0">
                 <picture>
                   <source srcset="img/room_01-preview-desktop@1x.webp 1x, img/room_01-preview-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_01-preview-tablet@1x.webp 1x, img/room_01-preview-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -132,7 +132,7 @@
                   <img src="img/room_01-preview-desktop@1x.jpg" alt="Превью номера “Супер-Люкс”" width="70" height="112">
                 </picture>
               </button>
-              <button class="room__gallery-preview" type="button">
+              <button class="room__gallery-preview glide__bullet" type="button" data-glide-dir="=1">
                 <picture>
                   <source srcset="img/room_02-preview-desktop@1x.webp 1x, img/room_02-preview-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_02-preview-tablet@1x.webp 1x, img/room_02-preview-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -143,7 +143,7 @@
                   <img src="img/room_02-preview-desktop@1x.jpg" alt="Превью номера “Супер-Люкс”" width="70" height="112">
                 </picture>
               </button>
-              <button class="room__gallery-preview" type="button">
+              <button class="room__gallery-preview glide__bullet" type="button" data-glide-dir="=2">
                 <picture>
                   <source srcset="img/room_03-preview-desktop@1x.webp 1x, img/room_03-preview-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/room_03-preview-tablet@1x.webp 1x, img/room_03-preview-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
