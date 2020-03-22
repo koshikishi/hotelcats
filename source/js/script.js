@@ -176,6 +176,17 @@ if (overlay) {
   };
 }
 
+// Оживление слайдера номеров
+if (document.querySelector(`.slider--rooms .slider__inner`)) {
+  new Glide(`.slider--rooms .slider__inner`, {
+    type: `carousel`,
+    gap: 30,
+    classes: {
+      activeNav: `slider__bullet--active`
+    }
+  }).mount();
+}
+
 // Появление элемента
 function elementOpen(elmnt, cls, ovrl = true) {
   elmnt.classList.add(cls);

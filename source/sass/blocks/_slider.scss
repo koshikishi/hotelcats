@@ -6,10 +6,8 @@
 
 .slider__wrapper {
   @extend %container-narrow;
-  position: relative;
   padding: 0;
   padding-top: 32px;
-  padding-bottom: 42px;
 
   .slider--testimonials & {
     &::before {
@@ -27,7 +25,6 @@
 
   @media (min-width: 768px) {
     padding-top: 81px;
-    padding-bottom: 62px;
 
     .slider--testimonials & {
       &::before {
@@ -41,7 +38,6 @@
 
   @media (min-width: 1280px) {
     padding-top: 111px;
-    padding-bottom: 91px;
 
     .slider--testimonials & {
       &::before {
@@ -102,13 +98,42 @@
   }
 }
 
-.slider__track {
-  padding-right: 15px;
-  padding-left: 15px;
+.slider__inner {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+
+  .slider--rooms & {
+    width: 290px;
+  }
 
   @media (min-width: 768px) {
-    padding-right: 35px;
-    padding-left: 35px;
+    .slider--rooms & {
+      width: 678px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .slider--rooms & {
+      width: 1030px;
+    }
+  }
+}
+
+.slider__track {
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-right: 15px;
+  padding-bottom: 42px;
+  padding-left: 15px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-right: 20px;
+    padding-bottom: 62px;
+    padding-left: 20px;
 
     @media (max-width: 1279px) {
       .slider--testimonials & {
@@ -119,31 +144,17 @@
   }
 
   @media (min-width: 1280px) {
-    padding-right: 55px;
-    padding-left: 55px;
+    padding-bottom: 91px;
   }
 }
 
 .slider__list {
   display: flex;
-  margin-right: auto;
-  margin-left: auto;
+  overflow: visible;
 
   .no-js & {
     overflow: auto;
     touch-action: auto;
-  }
-
-  .slider--rooms & {
-    width: 290px;
-
-    @media (min-width: 768px) {
-      width: 678px;
-    }
-
-    @media (min-width: 1280px) {
-      width: 1030px;
-    }
   }
 }
 
@@ -152,10 +163,6 @@
 
   .no-js & {
     flex-shrink: 0;
-  }
-
-  &:not(:first-child) {
-    display: none;
   }
 
   @media (min-width: 768px) {
@@ -363,6 +370,10 @@
   max-width: 290px;
   transform: translateX(50%);
 
+  .no-js & {
+    display: none;
+  }
+
   @media (min-width: 1280px) {
     bottom: 24px;
   }
@@ -399,9 +410,13 @@
 
 .slider__arrows {
   position: absolute;
-  right: 125px;
+  right: 0;
   bottom: 12px;
   display: none;
+
+  .no-js & {
+    display: none;
+  }
 
   @media (min-width: 1280px) {
     display: flex;
