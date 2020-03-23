@@ -28,9 +28,11 @@
 
 .footer__logo {
   display: block;
+  width: 46px;
   margin-bottom: 22px;
 
   @media (min-width: 768px) {
+    width: auto;
     margin-bottom: 0;
   }
 }

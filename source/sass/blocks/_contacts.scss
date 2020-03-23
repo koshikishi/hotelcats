@@ -122,6 +122,12 @@
         64px,
         auto;
     }
+
+    [class*="placemark"] {
+      [class*="image"] {
+        transform: scale(1.13) !important;
+      }
+    }
   }
 
   @media (min-width: 1280px) {

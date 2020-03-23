@@ -218,6 +218,29 @@ if (document.querySelector(`.room__gallery`)) {
   }).mount();
 }
 
+// Инициализация интерактивной карты
+ymaps.ready(() => {
+  const map = new ymaps.Map(document.querySelector(`.contacts__map`), {
+    center: [59.938635, 30.323118],
+    zoom: 16
+  });
+  map.controls.remove(`searchControl`);
+  map.controls.remove(`routeButtonControl`);
+  map.controls.remove(`trafficControl`);
+  map.controls.remove(`typeSelector`);
+  map.controls.remove(`rulerControl`);
+
+  const mapPlacemark = new ymaps.Placemark(map.getCenter(), {
+    hintContent: `Санкт-Петербург,<br>ул Большая Конюшенная, д 19`
+  }, {
+    iconLayout: `default#image`,
+    iconImageHref: `img/contacts_map-marker.svg`,
+    iconImageSize: [54, 77],
+    iconImageOffset: [-27, -52]
+  });
+  map.geoObjects.add(mapPlacemark);
+});
+
 // Появление элемента
 function elementOpen(elmnt, cls, ovrl = true) {
   elmnt.classList.add(cls);
