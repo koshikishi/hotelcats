@@ -59,7 +59,12 @@
     "declaration-block-trailing-semicolon": "always",
 
     "block-closing-brace-empty-line-before": "never",
-    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-after": ["always", {
+      "ignoreAtRules": [
+        "if",
+        "else"
+      ]
+    }],
     "block-closing-brace-newline-before": "always",
     "block-closing-brace-space-after": "always-single-line",
     "block-closing-brace-space-before": "always-single-line",
@@ -100,7 +105,6 @@
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
     "media-feature-name-no-unknown": true,
-    "media-feature-name-no-vendor-prefix": true,
     "media-feature-parentheses-space-inside": "never",
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
@@ -115,7 +119,8 @@
         "first-nested",
         "blockless-after-blockless"
       ],
-      "ignore": ["after-comment"]
+      "ignore": ["after-comment"],
+      "ignoreAtRules": ["else"]
     }],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
@@ -143,7 +148,10 @@
     "comment-no-empty": true,
 
     "indentation": [2, {
-      "ignore": ["inside-parens"]
+      "ignore": [
+        "inside-parens",
+        "value"
+      ]
     }],
 
     "max-empty-lines": 2,

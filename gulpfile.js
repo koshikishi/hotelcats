@@ -62,6 +62,38 @@ function js() {
 }
 exports.js = js;
 
+// Минификация файлов библиотек *.css
+function csslibs() {
+  return src(`node_modules/@glidejs/glide/dist/css/glide.core.css`)
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS({
+      level: {
+        1: {
+          specialComments: false
+        }
+      }
+    }))
+    .pipe(rename({
+      suffix: `.min`
+    }))
+    .pipe(sourcemaps.write(`.`))
+    .pipe(dest(`build/css`))
+}
+exports.csslibs = csslibs;
+
+// Минификация файлов библиотек *.js
+function jslibs() {
+  return pipeline(
+    src(`node_modules/@glidejs/glide/dist/glide.js`),
+    uglify(),
+    rename({
+      suffix: `.min`
+    }),
+    dest(`build/js`)
+  );
+}
+exports.jslibs = jslibs;
+
 // Генерация файла библиотеки Modernizr
 function modzr() {
   return src(`fake`, {
@@ -156,12 +188,12 @@ exports.refresh = refresh;
 // Создание сборки проекта
 exports.build = series(
   clean,
-  parallel(copy, css, js, modzr, html)
+  parallel(copy, css, js, csslibs, jslibs, modzr, html)
 );
 
 // Создание сборки проекта и запуск сервера Browsersync
 exports.start = series(
   clean,
-  parallel(copy, css, js, modzr, html),
+  parallel(copy, css, js, csslibs, jslibs, modzr, html),
   server
 );

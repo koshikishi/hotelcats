@@ -32,5 +32,8 @@
     "imagemin-pngquant": "^8.0.0",
     "readable-stream": "^3.6.0",
     "scss-resets": "^0.5.2"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
   }
 }
