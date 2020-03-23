@@ -86,14 +86,15 @@
         </div>
       </div>
     </header>
-    <main>
+    <main itemscope itemtype="http://schema.org/Hotel">
       <section class="hero">
         <div class="hero__wrapper">
           <div class="hero__inner">
             <div class="hero__content">
               <p class="hero__city">Санкт-Петербург</p>
-              <p class="hero__title">Котейка</p>
-              <h1 class="hero__subtitle">Уютная гостиница для котов и кошек</h1>
+              <p class="hero__title" itemprop="name">Котейка</p>
+              <h1 class="hero__subtitle" itemprop="description">Уютная гостиница для котов и кошек</h1>
+              <meta itemprop="image" content="img/hero_bg-desktop@1x.jpg">
               <a class="button button--inverse" href="catalog.html">Забронировать</a>
             </div>
           </div>
@@ -136,7 +137,7 @@
           <div class="slider__inner glide">
             <div class="slider__track glide__track" data-glide-el="track">
               <div class="slider__list glide__slides">
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemprop="containsPlace" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-01-desktop@1x.webp 1x, img/slider_rooms-01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-01-tablet@1x.webp 1x, img/slider_rooms-01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -144,19 +145,23 @@
                     <source srcset="img/slider_rooms-01-desktop@1x.jpg 1x, img/slider_rooms-01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-01-tablet@1x.jpg 1x, img/slider_rooms-01-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-01-mobile@1x.jpg 1x, img/slider_rooms-01-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Эконом плюс</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Эконом плюс</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 0,90 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">0,90</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) — 90х100х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 200₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">200</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemprop="containsPlace" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-02-desktop@1x.webp 1x, img/slider_rooms-02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-02-tablet@1x.webp 1x, img/slider_rooms-02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -164,19 +169,23 @@
                     <source srcset="img/slider_rooms-02-desktop@1x.jpg 1x, img/slider_rooms-02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-02-tablet@1x.jpg 1x, img/slider_rooms-02-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-02-mobile@1x.jpg 1x, img/slider_rooms-02-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Комфорт</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Комфорт</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 1,13 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">1,13</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) - 100х125х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 250₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">250</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemprop="containsPlace" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-03-desktop@1x.webp 1x, img/slider_rooms-03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-03-tablet@1x.webp 1x, img/slider_rooms-03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -184,16 +193,20 @@
                     <source srcset="img/slider_rooms-03-desktop@1x.jpg 1x, img/slider_rooms-03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-03-tablet@1x.jpg 1x, img/slider_rooms-03-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-03-mobile@1x.jpg 1x, img/slider_rooms-03-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Сьют</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Сьют</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 1,56 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">1,56</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) - 125х125х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 350₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">350</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
               </div>
@@ -223,28 +236,41 @@
       <section class="slider slider--testimonials page__testimonials" id="testimonials">
         <div class="slider__wrapper">
           <h2 class="slider__title">Отзывы</h2>
+          <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="reviewCount" content="3">
+          </span>
           <div class="slider__inner glide">
             <div class="slider__track glide__track" data-glide-el="track">
               <div class="slider__list glide__slides">
-                <blockquote class="slider__testimonial glide__slide">
-                  <p class="slider__testimonial-text">Первый раз пришлось оставить нашего котика в&nbsp;гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И&nbsp;мы и котик остались очень довольны!</p>
+                <blockquote class="slider__testimonial glide__slide h-review hreview" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                  <p class="slider__testimonial-text e-content description" itemprop="reviewBody">Первый раз пришлось оставить нашего котика в&nbsp;<span class="p-item h-item item p-name fn">гостинице</span>, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, как он себя чувствует. И&nbsp;мы и котик остались очень довольны!</p>
                   <footer class="slider__testimonial-meta">
-                    <cite class="slider__testimonial-author">Валерия Гришаева</cite>
-                    <time class="slider__testimonial-date" datetime="2019-11-15">15 ноября, 2019</time>
+                    <cite class="slider__testimonial-author p-author reviewer" itemprop="author">Валерия Гришаева</cite>
+                    <time class="slider__testimonial-date dt-published dtreviewed" datetime="2019-11-15" itemprop="datePublished">15 ноября, 2019</time>
+                    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                      <meta itemprop="ratingValue" content="5">
+                    </span>
                   </footer>
                 </blockquote>
-                <blockquote class="slider__testimonial glide__slide">
-                  <p class="slider__testimonial-text">Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.</p>
+                <blockquote class="slider__testimonial glide__slide h-review hreview" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                  <p class="slider__testimonial-text e-content description" itemprop="reviewBody">Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. В “<span class="p-item h-item item p-name fn">Котейке</span>” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.</p>
                   <footer class="slider__testimonial-meta">
-                    <cite class="slider__testimonial-author">Екатерина Минаева</cite>
-                    <time class="slider__testimonial-date" datetime="2019-10-10">10 октября, 2019</time>
+                    <cite class="slider__testimonial-author p-author reviewer" itemprop="author">Екатерина Минаева</cite>
+                    <time class="slider__testimonial-date dt-published dtreviewed" datetime="2019-10-10" itemprop="datePublished">10 октября, 2019</time>
+                    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                      <meta itemprop="ratingValue" content="5">
+                    </span>
                   </footer>
                 </blockquote>
-                <blockquote class="slider__testimonial glide__slide">
-                  <p class="slider__testimonial-text">Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.</p>
+                <blockquote class="slider__testimonial glide__slide h-review hreview" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                  <p class="slider__testimonial-text e-content description" itemprop="reviewBody">Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “<span class="p-item h-item item p-name fn">Котейка</span>” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.</p>
                   <footer class="slider__testimonial-meta">
-                    <cite class="slider__testimonial-author">Павел Нечаев</cite>
-                    <time class="slider__testimonial-date" datetime="2019-08-02">2 августа, 2019</time>
+                    <cite class="slider__testimonial-author p-author reviewer" itemprop="author">Павел Нечаев</cite>
+                    <time class="slider__testimonial-date dt-published dtreviewed" datetime="2019-08-02" itemprop="datePublished">2 августа, 2019</time>
+                    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                      <meta itemprop="ratingValue" content="5">
+                    </span>
                   </footer>
                 </blockquote>
               </div>
@@ -276,22 +302,35 @@
           <div class="contacts__column">
             <div class="contacts__inner">
               <h2 class="contacts__title">Как нас найти</h2>
-              <address class="contacts__content">
+              <address class="contacts__content h-card vcard" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <dl class="contacts__list">
                   <dt class="contacts__list-title">Адрес</dt>
-                  <dd class="contacts__list-info">
-                    Санкт-Петербург,<br>
-                    ул Большая Конюшенная, д 19
+                  <dd class="contacts__list-info p-adr h-adr adr">
+                    <span class="p-locality locality" itemprop="addressLocality">Санкт-Петербург</span>,<br>
+                    <span class="p-street-address street-address" itemprop="streetAddress">ул Большая Конюшенная, д 19</span>
                   </dd>
                   <dt class="contacts__list-title">Режим работы</dt>
-                  <dd class="contacts__list-info">Ежедневно, с 9:00 до 20:00</dd>
+                  <dd class="contacts__list-info workhours" itemprop="hoursAvailable" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Monday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Tuesday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Wednesday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Thursday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Friday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Saturday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Sunday">
+                    Ежедневно, с <time itemprop="opens" datetime="09:00">9:00</time> до <time itemprop="closes" datetime="20:00">20:00</time>
+                  </dd>
                   <dt class="contacts__list-title">Телефон</dt>
                   <dd class="contacts__list-info">
-                    <a href="tel:+78003335599">8 (800) 333-55-99</a>
+                    <a href="tel:+78003335599">
+                      <span class="p-tel tel" itemprop="telephone">8 (800) 333-55-99</span>
+                    </a>
                   </dd>
                   <dt class="contacts__list-title">E-mail</dt>
                   <dd class="contacts__list-info">
-                    <a href="mailto:info@cat-hotel.ru">info@cat-hotel.ru</a>
+                    <a href="mailto:info@cat-hotel.ru">
+                      <span class="u-email email" itemprop="email">info@cat-hotel.ru</span>
+                    </a>
                   </dd>
                   <dt class="contacts__list-title">Социальные сети</dt>
                   <dd class="contacts__list-info">
@@ -317,7 +356,9 @@
               </address>
             </div>
           </div>
-          <div class="contacts__map"></div>
+          <div class="contacts__map">
+            <meta itemprop="hasMap" content="https://yandex.ru/maps/-/CKeb7RPg">
+          </div>
         </div>
       </section>
     </main>

@@ -88,7 +88,7 @@
     </header>
     <main>
       <section class="room page__room">
-        <div class="room__wrapper">
+        <div class="room__wrapper h-product hproduct" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
           <div class="room__gallery glide">
             <div class="room__gallery-track glide__track" data-glide-el="track">
               <div class="room__gallery-list glide__slides">
@@ -99,7 +99,7 @@
                   <source srcset="img/room_01-desktop@1x.jpg 1x, img/room_01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                   <source srcset="img/room_01-tablet@1x.jpg 1x, img/room_01-tablet@2x.jpg 2x" media="(min-width: 768px)">
                   <source srcset="img/room_01-mobile@1x.jpg 1x, img/room_01-mobile@2x.jpg 2x">
-                  <img src="img/room_01-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396">
+                  <img class="u-photo photo" src="img/room_01-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396" itemprop="image">
                 </picture>
                 <picture class="room__gallery-image glide__slide">
                   <source srcset="img/room_02-desktop@1x.webp 1x, img/room_02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
@@ -108,7 +108,7 @@
                   <source srcset="img/room_02-desktop@1x.jpg 1x, img/room_02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                   <source srcset="img/room_02-tablet@1x.jpg 1x, img/room_02-tablet@2x.jpg 2x" media="(min-width: 768px)">
                   <source srcset="img/room_02-mobile@1x.jpg 1x, img/room_02-mobile@2x.jpg 2x">
-                  <img src="img/room_02-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396">
+                  <img class="u-photo photo" src="img/room_02-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396" itemprop="image">
                 </picture>
                 <picture class="room__gallery-image glide__slide">
                   <source srcset="img/room_03-desktop@1x.webp 1x, img/room_03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
@@ -117,7 +117,7 @@
                   <source srcset="img/room_03-desktop@1x.jpg 1x, img/room_03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                   <source srcset="img/room_03-tablet@1x.jpg 1x, img/room_03-tablet@2x.jpg 2x" media="(min-width: 768px)">
                   <source srcset="img/room_03-mobile@1x.jpg 1x, img/room_03-mobile@2x.jpg 2x">
-                  <img src="img/room_03-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396">
+                  <img class="u-photo photo" src="img/room_03-desktop@1x.jpg" alt="Фото номера “Супер-Люкс”" width="500" height="396" itemprop="image">
                 </picture>
               </div>
             </div>
@@ -158,22 +158,35 @@
             </div>
           </div>
           <div class="room__content">
-            <h1 class="room__title">Супер-Люкс</h1>
+            <h1 class="room__title p-name fn" itemprop="name">Супер-Люкс</h1>
             <ul class="room__info">
               <li>Размеры (ШхГхВ) - 180х160х180 см</li>
-              <li>Площадь - 2,88 м2</li>
+              <li>Площадь - <span itemprop="floorSize">2,88</span> м2</li>
               <li>
                 Оснащение номера
                 <ul class="room__equipment-list">
-                  <li class="room__equipment-item room__equipment-item--bed">Лежак</li>
-                  <li class="room__equipment-item room__equipment-item--house">Домик</li>
-                  <li class="room__equipment-item room__equipment-item--tree">Игровой комплекс - 3 яруса</li>
-                  <li class="room__equipment-item room__equipment-item--scratcher">Когтеточка</li>
+                  <li class="room__equipment-item room__equipment-item--bed" itemprop="amenityFeature" itemscope itemtype="http://schema.org/LocationFeatureSpecification">
+                    <span itemprop="name">Лежак</span>
+                    <meta itemprop="value" content="True">
+                  </li>
+                  <li class="room__equipment-item room__equipment-item--house" itemprop="amenityFeature" itemscope itemtype="http://schema.org/LocationFeatureSpecification">
+                    <span itemprop="name">Домик</span>
+                    <meta itemprop="value" content="True">
+                  </li>
+                  <li class="room__equipment-item room__equipment-item--tree" itemprop="amenityFeature" itemscope itemtype="http://schema.org/LocationFeatureSpecification">
+                    <span itemprop="name">Игровой комплекс</span> - 3 яруса
+                    <meta itemprop="value" content="True">
+                  </li>
+                  <li class="room__equipment-item room__equipment-item--scratcher" itemprop="amenityFeature" itemscope itemtype="http://schema.org/LocationFeatureSpecification">
+                    <span itemprop="name">Когтеточка</span>
+                    <meta itemprop="value" content="True">
+                  </li>
                 </ul>
               </li>
-              <li>
+              <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 Цена за сутки:
-                <b class="room__price">600₽</b>
+                <b class="room__price"><span class="p-price price" itemprop="price">600</span>₽</b>
+                <meta itemprop="priceCurrency" content="RUB">
               </li>
             </ul>
             <a class="button room__button" href="reservation-form.html">Забронировать</a>
@@ -186,7 +199,7 @@
           <div class="slider__inner glide">
             <div class="slider__track glide__track" data-glide-el="track">
               <div class="slider__list glide__slides">
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-01-desktop@1x.webp 1x, img/slider_rooms-01-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-01-tablet@1x.webp 1x, img/slider_rooms-01-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -194,19 +207,23 @@
                     <source srcset="img/slider_rooms-01-desktop@1x.jpg 1x, img/slider_rooms-01-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-01-tablet@1x.jpg 1x, img/slider_rooms-01-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-01-mobile@1x.jpg 1x, img/slider_rooms-01-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-01-desktop@1x.jpg" alt="Номер “Эконом плюс”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Эконом плюс</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Эконом плюс</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 0,90 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">0,90</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) — 90х100х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 200₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">200</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-02-desktop@1x.webp 1x, img/slider_rooms-02-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-02-tablet@1x.webp 1x, img/slider_rooms-02-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -214,19 +231,23 @@
                     <source srcset="img/slider_rooms-02-desktop@1x.jpg 1x, img/slider_rooms-02-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-02-tablet@1x.jpg 1x, img/slider_rooms-02-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-02-mobile@1x.jpg 1x, img/slider_rooms-02-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-02-desktop@1x.jpg" alt="Номер “Комфорт”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Комфорт</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Комфорт</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 1,13 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">1,13</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) - 100х125х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 250₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">250</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
-                <div class="slider__room glide__slide">
+                <div class="slider__room glide__slide h-product hproduct" itemscope itemtype="http://schema.org/HotelRoom http://schema.org/Product">
                   <picture class="slider__room-image">
                     <source srcset="img/slider_rooms-03-desktop@1x.webp 1x, img/slider_rooms-03-desktop@2x.webp 2x" media="(min-width: 1280px)" type="image/webp">
                     <source srcset="img/slider_rooms-03-tablet@1x.webp 1x, img/slider_rooms-03-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
@@ -234,16 +255,20 @@
                     <source srcset="img/slider_rooms-03-desktop@1x.jpg 1x, img/slider_rooms-03-desktop@2x.jpg 2x" media="(min-width: 1280px)">
                     <source srcset="img/slider_rooms-03-tablet@1x.jpg 1x, img/slider_rooms-03-tablet@2x.jpg 2x" media="(min-width: 768px)">
                     <source srcset="img/slider_rooms-03-mobile@1x.jpg 1x, img/slider_rooms-03-mobile@2x.jpg 2x">
-                    <img src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404">
+                    <img class="u-photo photo" src="img/slider_rooms-03-desktop@1x.jpg" alt="Номер “Сьют”" width="600" height="404" itemprop="image">
                   </picture>
                   <div class="slider__room-content">
-                    <h3 class="slider__room-title">Сьют</h3>
+                    <h3 class="slider__room-title p-name fn" itemprop="name">Сьют</h3>
                     <ul class="slider__room-list">
-                      <li class="slider__room-item">Площадь - 1,56 м2</li>
+                      <li class="slider__room-item">Площадь - <span itemprop="floorSize">1,56</span> м2</li>
                       <li class="slider__room-item">Размеры (ШхГхВ) - 125х125х180 см</li>
-                      <li class="slider__room-item">Цена за сутки: 350₽</li>
+                      <li class="slider__room-item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        Цена за сутки:
+                        <span class="p-price price" itemprop="price">350</span>₽
+                        <meta itemprop="priceCurrency" content="RUB">
+                      </li>
                     </ul>
-                    <a class="button" href="room.html">Забронировать</a>
+                    <a class="button u-url url" href="room.html" itemprop="url">Забронировать</a>
                   </div>
                 </div>
               </div>
@@ -275,22 +300,35 @@
           <div class="contacts__column">
             <div class="contacts__inner">
               <h2 class="contacts__title">Как нас найти</h2>
-              <address class="contacts__content">
+              <address class="contacts__content h-card vcard" itemscope itemtype="http://schema.org/PostalAddress">
                 <dl class="contacts__list">
                   <dt class="contacts__list-title">Адрес</dt>
-                  <dd class="contacts__list-info">
-                    Санкт-Петербург,<br>
-                    ул Большая Конюшенная, д 19
+                  <dd class="contacts__list-info p-adr h-adr adr">
+                    <span class="p-locality locality" itemprop="addressLocality">Санкт-Петербург</span>,<br>
+                    <span class="p-street-address street-address" itemprop="streetAddress">ул Большая Конюшенная, д 19</span>
                   </dd>
                   <dt class="contacts__list-title">Режим работы</dt>
-                  <dd class="contacts__list-info">Ежедневно, с 9:00 до 20:00</dd>
+                  <dd class="contacts__list-info workhours" itemprop="hoursAvailable" itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Monday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Tuesday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Wednesday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Thursday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Friday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Saturday">
+                    <link itemprop="dayOfWeek" href="http://schema.org/Sunday">
+                    Ежедневно, с <time itemprop="opens" datetime="09:00">9:00</time> до <time itemprop="closes" datetime="20:00">20:00</time>
+                  </dd>
                   <dt class="contacts__list-title">Телефон</dt>
                   <dd class="contacts__list-info">
-                    <a href="tel:+78003335599">8 (800) 333-55-99</a>
+                    <a href="tel:+78003335599">
+                      <span class="p-tel tel" itemprop="telephone">8 (800) 333-55-99</span>
+                    </a>
                   </dd>
                   <dt class="contacts__list-title">E-mail</dt>
                   <dd class="contacts__list-info">
-                    <a href="mailto:info@cat-hotel.ru">info@cat-hotel.ru</a>
+                    <a href="mailto:info@cat-hotel.ru">
+                      <span class="u-email email" itemprop="email">info@cat-hotel.ru</span>
+                    </a>
                   </dd>
                   <dt class="contacts__list-title">Социальные сети</dt>
                   <dd class="contacts__list-info">
