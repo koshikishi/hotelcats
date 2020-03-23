@@ -62,10 +62,7 @@ if (sorting) {
   const styleElmnt = document.createElement(`style`);
 
   document.head.appendChild(styleElmnt);
-
-  for (let i = 0, j = [`-webkit-keyframes`, `keyframes`]; i < j.length; i++) {
-    styleElmnt.sheet.insertRule(`@${j[i]} sorting{from{height:0}to{height:${sortingOptionsHeight}px}}`, i);
-  }
+  styleElmnt.sheet.insertRule(`@keyframes sorting{from{height:0}to{height:${sortingOptionsHeight}px}}`, 0);
 
   // Появление и закрытие меню сортировки
   sortingToggleBtn.onclick = (evt) => {

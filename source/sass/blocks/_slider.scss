@@ -420,6 +420,10 @@
     display: none;
   }
 
+  .slider--testimonials & {
+    right: -30px;
+  }
+
   @media (min-width: 1280px) {
     display: flex;
     justify-content: space-between;
