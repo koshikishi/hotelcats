@@ -218,8 +218,16 @@ if (document.querySelector(`.room__gallery`)) {
   }).mount();
 }
 
+// Создание скрипта интерактивной карты
+window.setTimeout(() => {
+  const scriptElmnt = document.createElement(`script`);
+
+  scriptElmnt.src = `https://api-maps.yandex.ru/2.1/?apikey=56dd7dfa-9b89-4846-bd0c-6d22404cf29e&lang=ru_RU&load=package.standard&onload=initYaMap`;
+  document.body.appendChild(scriptElmnt);
+}, 2000);
+
 // Инициализация интерактивной карты
-ymaps.ready(() => {
+function initYaMap(ymaps) {
   const map = new ymaps.Map(document.querySelector(`.contacts__map`), {
     center: [59.938635, 30.323118],
     zoom: 16
@@ -239,7 +247,7 @@ ymaps.ready(() => {
     iconImageOffset: [-27, -52]
   });
   map.geoObjects.add(mapPlacemark);
-});
+}
 
 // Появление элемента
 function elementOpen(elmnt, cls, ovrl = true) {
